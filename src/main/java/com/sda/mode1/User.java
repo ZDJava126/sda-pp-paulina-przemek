@@ -9,7 +9,6 @@ import java.util.Objects;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -17,7 +16,7 @@ import java.util.Objects;
 @Entity
 public class User {
 
-   @Id
+    @Id
     private String username;
     private String password;
     private String name;
@@ -25,17 +24,17 @@ public class User {
     private int age;
     private String email;
 
- @Override
- public boolean equals(Object o) {
-  if (this == o) return true;
-  if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
 
-  User user = (User) o;
-  return username != null && Objects.equals(username, user.username);
- }
+        User user = (User) o;
+        return username != null && Objects.equals(username, user.username);
+    }
 
- @Override
- public int hashCode() {
-  return getClass().hashCode();
- }
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
